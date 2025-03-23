@@ -1,7 +1,7 @@
 # AI Avatar Assistant for IDMS ERP
 
 <div align="center">
-  <img src="https://i.imgur.com/VgmQQjA.png" alt="AI Avatar Assistant Logo" width="300px">
+  <img src="https://cdn.pixabay.com/photo/2023/01/22/13/46/machine-learning-7736623_1280.jpg" alt="AI Avatar Assistant Logo" width="300px">
   
   <p>
     <b>A next-generation AI-driven assistant with human-like avatar capabilities designed specifically for IDMS ERP support.</b>
@@ -25,7 +25,7 @@
 ## 🌟 Key Features
 
 <div align="center">
-  <img src="https://i.imgur.com/RfYyP8G.png" alt="Features Overview" width="90%">
+  <img src="https://cdn.pixabay.com/photo/2022/08/05/09/05/gradient-7366403_1280.jpg" alt="Features Overview" width="90%">
 </div>
 
 The AI Avatar Assistant combines cutting-edge technologies to provide a seamless and intuitive user experience:
@@ -45,7 +45,7 @@ Try out the AI Avatar Assistant in our live environment:
 
 <div align="center">
   <a href="https://ai-avatar-assistant.vercel.app" target="_blank">
-    <img src="https://i.imgur.com/J9bFVXx.png" alt="Live Demo Button" width="300px">
+    <img src="https://cdn.pixabay.com/photo/2016/12/09/04/02/presents-1893642_1280.jpg" alt="Live Demo Button" width="300px">
   </a>
 </div>
 
@@ -55,14 +55,14 @@ Try out the AI Avatar Assistant in our live environment:
 ## 📸 Screenshots
 
 <div align="center">
-  <img src="https://i.imgur.com/xWYLxJF.png" alt="AI Avatar Interface" width="90%">
+  <img src="https://cdn.pixabay.com/photo/2019/06/17/19/48/source-4280758_1280.jpg" alt="AI Avatar Interface" width="90%">
   <p><i>The main avatar interface showing the interactive visualization</i></p>
   
   <br>
   
   <div>
-    <img src="https://i.imgur.com/8DY3s1h.png" alt="Chat Interface" width="48%">
-    <img src="https://i.imgur.com/Wnrfcm3.png" alt="Mobile View" width="48%">
+    <img src="https://cdn.pixabay.com/photo/2018/05/04/20/01/website-3374825_1280.jpg" alt="Chat Interface" width="48%">
+    <img src="https://cdn.pixabay.com/photo/2020/01/26/21/57/computer-4796017_1280.jpg" alt="Mobile View" width="48%">
   </div>
   <p><i>The chat interface (left) and responsive mobile view (right)</i></p>
 </div>
@@ -70,7 +70,7 @@ Try out the AI Avatar Assistant in our live environment:
 ## 🏗️ Architecture
 
 <div align="center">
-  <img src="https://i.imgur.com/GmBQefS.png" alt="System Architecture" width="90%">
+  <img src="https://cdn.pixabay.com/photo/2019/06/13/11/28/team-4271642_1280.jpg" alt="System Architecture" width="90%">
 </div>
 
 The AI Avatar Assistant uses a microservices architecture with:
@@ -87,8 +87,24 @@ The AI Avatar Assistant uses a microservices architecture with:
 ### ⚙️ Data Flow
 
 <div align="center">
-  <img src="https://i.imgur.com/3Lks4GV.png" alt="Data Flow Diagram" width="80%">
+  <img src="https://cdn.pixabay.com/photo/2018/02/09/19/39/flow-chart-3142180_1280.jpg" alt="Data Flow Diagram" width="80%">
 </div>
+
+```mermaid
+graph LR
+    User([User]) -->|Text/Voice Input| Frontend
+    Frontend -->|WebSocket| Backend
+    Backend -->|Query| AI[AI Services]
+    Backend -->|Speech Request| Voice[Voice Services]
+    Backend -->|Animation Request| Avatar[Avatar Services]
+    Backend -->|Vector Search| DB[Vector Database]
+    AI -->|Response| Backend
+    Voice -->|Audio| Backend
+    Avatar -->|Animation Data| Backend
+    DB -->|Knowledge| Backend
+    Backend -->|Response Data| Frontend
+    Frontend -->|Display/Audio/Animation| User
+```
 
 1. User inputs text or voice through the frontend
 2. Request is sent to backend via Socket.io for real-time communication
@@ -155,7 +171,7 @@ NEXT_PUBLIC_DID_AGENT_ID=your_did_agent_id_here
 ## 📚 API Reference
 
 <div align="center">
-  <img src="https://i.imgur.com/WJMbvbL.png" alt="API Reference Overview" width="80%">
+  <img src="https://cdn.pixabay.com/photo/2017/06/14/16/20/network-2402637_1280.jpg" alt="API Reference Overview" width="80%">
 </div>
 
 The backend provides several API endpoints to support the AI Assistant functionality:
@@ -194,8 +210,33 @@ The backend provides several API endpoints to support the AI Assistant functiona
 ## 👨‍💻 Development Workflow
 
 <div align="center">
-  <img src="https://i.imgur.com/pO2XxcJ.png" alt="Development Workflow" width="80%">
+  <img src="https://cdn.pixabay.com/photo/2018/04/06/13/46/poly-3295856_1280.jpg" alt="Development Workflow" width="80%">
 </div>
+
+```mermaid
+flowchart TD
+    subgraph Development
+        FrontEnd[Frontend Development]
+        BackEnd[Backend Development]
+        FullStack[Full-Stack Testing]
+        
+        FrontEnd --> FullStack
+        BackEnd --> FullStack
+    end
+    
+    subgraph CI/CD
+        Lint[Linting & Style Check]
+        Test[Automated Tests]
+        Build[Build Process]
+        Deploy[Deployment]
+        
+        Lint --> Test
+        Test --> Build
+        Build --> Deploy
+    end
+    
+    Development --> CI/CD
+```
 
 ### Frontend Development
 
@@ -257,8 +298,25 @@ npm run lint:fix
 ## 🚢 Deployment
 
 <div align="center">
-  <img src="https://i.imgur.com/HqJYYjF.png" alt="Deployment Overview" width="90%">
+  <img src="https://cdn.pixabay.com/photo/2018/03/15/16/11/background-3228704_1280.jpg" alt="Deployment Overview" width="90%">
 </div>
+
+```mermaid
+graph TD
+    Dev[Development] -->|Push to GitHub| GitHub[GitHub Repository]
+    
+    GitHub -->|Frontend Deployment| Vercel
+    GitHub -->|Backend Deployment| Railway
+    
+    Vercel -->|Environment Setup| VercelEnv[Environment Variables]
+    Railway -->|Environment Setup| RailwayEnv[Environment Variables]
+    
+    VercelEnv -->|Configure Endpoints| FrontendURL[Frontend URL]
+    RailwayEnv -->|Configure Services| BackendURL[Backend URL]
+    
+    FrontendURL --> Production[Production Environment]
+    BackendURL --> Production
+```
 
 ### Frontend (Vercel)
 
@@ -273,7 +331,7 @@ npm run lint:fix
 6. Deploy and get your production URL
 
 <div align="center">
-  <img src="https://i.imgur.com/pzvmyND.png" alt="Vercel Deployment" width="70%">
+  <img src="https://cdn.pixabay.com/photo/2018/04/17/11/03/database-3327251_1280.jpg" alt="Vercel Deployment" width="70%">
 </div>
 
 ### Backend (Railway)
@@ -288,7 +346,7 @@ npm run lint:fix
 6. Update your frontend's `NEXT_PUBLIC_BACKEND_URL` to point to your Railway URL
 
 <div align="center">
-  <img src="https://i.imgur.com/yQWnlKt.png" alt="Railway Deployment" width="70%">
+  <img src="https://cdn.pixabay.com/photo/2018/05/16/18/16/cloud-3406627_1280.jpg" alt="Railway Deployment" width="70%">
 </div>
 
 ## 🧩 Project Structure
@@ -334,8 +392,23 @@ AI-Avatar-Assistant/
 ## 🔧 Troubleshooting
 
 <div align="center">
-  <img src="https://i.imgur.com/9xYoAhQ.png" alt="Troubleshooting Guide" width="80%">
+  <img src="https://cdn.pixabay.com/photo/2019/09/23/09/15/technical-support-4497754_1280.jpg" alt="Troubleshooting Guide" width="80%">
 </div>
+
+```mermaid
+flowchart TD
+    Issue[Issue Detected] --> CheckEnv{Check Environment Variables}
+    CheckEnv -->|Incorrect| FixEnv[Fix Environment Variables]
+    CheckEnv -->|Correct| CheckConn{Check Connectivity}
+    
+    CheckConn -->|Failed| FixConn[Check Network/Firewall]
+    CheckConn -->|OK| CheckBrowser{Check Browser Compatibility}
+    
+    CheckBrowser -->|Incompatible| ChangeBrowser[Try Different Browser]
+    CheckBrowser -->|Compatible| CheckLogs{Check Console Logs}
+    
+    CheckLogs --> OpenIssue[Open GitHub Issue]
+```
 
 ### Common Issues
 
@@ -380,7 +453,7 @@ This will display additional debugging information in the browser console and UI
 ## 📊 Performance Optimization
 
 <div align="center">
-  <img src="https://i.imgur.com/M9kc3xJ.png" alt="Performance Metrics" width="80%">
+  <img src="https://cdn.pixabay.com/photo/2016/10/30/23/05/graphs-1784620_1280.png" alt="Performance Metrics" width="80%">
 </div>
 
 The AI Avatar Assistant is optimized for performance:
@@ -395,8 +468,30 @@ The AI Avatar Assistant is optimized for performance:
 ## 📌 Roadmap
 
 <div align="center">
-  <img src="https://i.imgur.com/5ZcLWTN.png" alt="Project Roadmap" width="90%">
+  <img src="https://cdn.pixabay.com/photo/2019/09/22/16/20/road-4496437_1280.jpg" alt="Project Roadmap" width="90%">
 </div>
+
+```mermaid
+gantt
+    title AI Avatar Assistant Roadmap
+    dateFormat  YYYY-MM-DD
+    
+    section Current
+    Enhanced UI & UX      :done, UI1, 2023-12-01, 2024-01-15
+    D-ID Integration      :done, DID1, 2023-12-15, 2024-01-30
+    
+    section Q1 2024
+    Enhanced Facial Expressions  :active, EFE, 2024-01-15, 2024-03-01
+    Multi-Avatar Support         :active, MAS, 2024-02-01, 2024-03-15
+    
+    section Q2 2024
+    API Gateway                  :APG, after MAS, 45d
+    Analytics Dashboard          :ADA, after APG, 30d
+    
+    section Q3 2024
+    Extended Language Support    :ELS, 2024-07-01, 60d
+    Mobile Apps Development      :MAD, 2024-08-01, 90d
+```
 
 ### Upcoming Features
 
