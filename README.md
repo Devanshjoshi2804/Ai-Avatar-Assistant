@@ -49,7 +49,7 @@ Try out the AI Avatar Assistant in our live environment:
   </a>
 </div>
 
-- [Frontend Demo](https://ai-avatar-assistant.vercel.app)
+- [Frontend Demo](https://frontend-phi-bay.vercel.app/)
 - [Backend API](https://ai-avatar-assistant-backend.railway.app)
 
 ## 📸 Screenshots
